@@ -1,0 +1,56 @@
+<!-- Default form login -->
+<div class="container">
+<form class="text-center border border-light p-5" [formGroup]="formLogin" (ngSubmit)="connex()">
+
+        <p class="h4 mb-4">Sign in</p>
+      
+        <!-- Email -->
+        <div class="form-group">
+        <input type="email" id="email" name="email" formControlName="email"  class="form-control mb-4" placeholder="E-mail" >
+        <div *ngIf="email.touched && email.invalid" class="text-danger">
+          <div *ngIf="email.errors.required">
+              email required
+          </div>
+          <div *ngIf="email.errors.email">
+              email required
+          </div>
+       
+         
+      </div>
+      </div>
+        <!-- Password -->
+        <div class="form-group">
+        <input  type="text" id="password" name="password" formControlName="password" class="form-control mb-4" placeholder="Password" >
+        <div *ngIf="password.touched && password.invalid " class="text-danger">
+          <div *ngIf="password.errors.required">
+              password required
+          </div>
+          
+          <div *ngIf="password.errors.minlength">
+              password invalid
+          </div>
+
+      </div>
+      </div>
+        <div class="d-flex justify-content-around">
+          <div>
+            <!-- Remember me -->
+            <mdb-checkbox [default]="true">Remember me</mdb-checkbox>
+          </div>
+          <div>
+            <!-- Forgot password -->
+            <a href="">Forgot password?</a>
+          </div>
+        </div>
+      
+        <!-- Sign in button -->
+        <button mdbBtn color="info" block="true" class="btn-yellow my-4" type="submit">Sign in</button>
+      
+        <!-- Register -->
+        <p>Not a member?
+          <a href="">Register</a>
+        </p>
+      
+      </form>
+    </div>
+      <!-- Default form login -->
